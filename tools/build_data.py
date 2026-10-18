@@ -1,0 +1,27 @@
+"""Build data.js from net.json: corrected station names, rounded coordinates."""
+import json, sys
+d = json.load(open(sys.argv[1] if len(sys.argv) > 1 else 'tools/net.source.json'))
+
+STIB = """abbaye=Abbaye;alphonse_xiii=Alphonse XIII;amitie=Amitié;ancienne_barriere=Ancienne Barrière;arts-loi=Arts-Loi / Kunst-Wet;arts_et_metiers=Arts et Métiers;auderghem-foret=Auderghem-Forêt;auderghem-shop.=Auderghem Shopping;avenue_du_roi=Avenue du Roi;berchem-shopping=Berchem Shopping;bossaert-basiliq.=Bossaert-Basilique;botanique=Botanique / Kruidtuin;bourse=Bourse / Beurs;bresil=Brésil;cambre-etoile=Cambre-Étoile;ceria=CERIA;chataignes=Châtaignes;cim._de_jette=Cimetière de Jette;cim._de_molenbeek=Cimetière de Molenbeek;college_s.-coeur=Collège Sacré-Cœur;comte_de_flandre=Comte de Flandre / Graaf van Vlaanderen;congres=Congrès;crainhem=Crainhem / Kraainem;crematorium=Crématorium;de_brouckere=De Brouckère;demineurs=Démineurs;dreve_des_brules=Drève des Brûlés;duchesse_brabant=Duchesse de Brabant;egide_van_ophem=Égide Van Ophem;eglantiers=Églantiers;eglise_st-antoine=Église Saint-Antoine;eglise_st-servais=Église Saint-Servais;elisabeth=Élisabeth;erasme=Érasme / Erasmus;etangs_noirs=Étangs Noirs / Zwarte Vijvers;foyer_schaerbeek.=Foyer Schaerbeekois;fusee=Fusée;gare_centrale=Gare Centrale / Centraal Station;gare_de_berchem=Gare de Berchem;gare_de_jette=Gare de Jette;gare_de_l'ouest=Gare de l'Ouest / Weststation;gare_de_saint-job=Gare de Saint-Job;gare_du_midi=Gare du Midi / Zuidstation;gare_du_nord=Gare du Nord / Noordstation;gj_martin=G.-J. Martin;guill._de_greef=Guillaume De Greef;heliotropes=Héliotropes;heros=Héros;heysel=Heysel / Heizel;hippod._boitsfort~0=Hippodrome de Boitsfort;hippod._boitsfort~1=Hippodrome de Boitsfort;hop._paul_brien=Hôpital Paul Brien;hopital_brugmann=Hôpital Brugmann;hopital_militaire=Hôpital Militaire;hotel_des_monnaies=Hôtel des Monnaies;ichec=ICHEC;jacobs_fontaine=Jacobs-Fontaine;joseph.-charlotte=Joseph-Charlotte;jules_cesar=Jules César;leopold_ii=Léopold II;leopold_iii=Léopold III;louise=Louise / Louiza;m._yourcenar=Marguerite Yourcenar;marie-jose=Marie-José;merode=Mérode;moliere=Molière;musee_du_tram=Musée du Tram;parc=Parc / Park;parc_des_sources=Parc des Sources;parvis_st-gilles=Parvis de Saint-Gilles;petillon=Pétillon;place_r._astrid=Place Reine Astrid;place_st-pierre=Place Saint-Pierre;polycl._brugmann=Polyclinique Brugmann;porte_de_flandre=Porte de Flandre;porte_de_hal=Porte de Hal / Hallepoort;porte_de_namur=Porte de Namur / Naamsepoort;porte_de_ninove=Porte de Ninove;princ._clementine=Princesse Clémentine;princ._elisabeth=Princesse Élisabeth;pte_d'anderlecht=Porte d'Anderlecht;rond-pt_souverain=Rond-Point du Souverain;rue_au_bois=Rue au Bois;sainte-catherine=Sainte-Catherine / Sint-Katelijne;schaerbeek_gare=Gare de Schaerbeek;sq._du_centenaire=Square du Centenaire;stephanie=Stéphanie;stienon=Stiénon;suede=Suède;thevenet=Thévenet;tir_aux_pigeons=Tir aux Pigeons;trinite=Trinité;trone=Trône / Troon;ulb=ULB;uz-pediatrie=UZ Pediatrie;uz_brussel=UZ Brussel;vub=VUB;xavier_de_bue=Xavier de Bue;yser=Yser / IJzer;zaman-forest_nat.=Zaman-Forest National;uccle_calevoet=Uccle-Calevoet / Ukkel-Kalevoet;etterbeek_gare=Gare d'Etterbeek;boitsfort_gare=Gare de Boitsfort;boondael_gare=Gare de Boondael"""
+NMBS = """S8813003=Bruxelles-Central / Brussel-Centraal;S8813037=Bruxelles-Chapelle / Brussel-Kapellekerk;S8813045=Bruxelles-Congrès / Brussel-Congres;S8811304=Bruxelles-Luxembourg / Brussel-Luxemburg;S8814001=Bruxelles-Midi / Brussel-Zuid;S8812005=Bruxelles-Nord / Brussel-Noord;S8815040=Bruxelles-Ouest / Brussel-West;S8811916=Bruxelles-Schuman / Brussel-Schuman;S8811007=Schaerbeek / Schaarbeek;S8812211=Berchem-Sainte-Agathe / Sint-Agatha-Berchem;S8814134=Uccle-Calevoet / Ukkel-Kalevoet;S8814126=Uccle-Stalle / Ukkel-Stalle;S8814118=Forest-Est / Vorst-Oost;S8814373=Forest-Midi / Vorst-Zuid;S8814449=Saint-Job / Sint-Job;S8811189=Vilvorde / Vilvoorde;S8814464=Vivier d'Oie / Gaaipikkel;S8811130=Haren-Sud / Haren-Zuid;S8811403=Germoir / Zuurvat;S8814472=Arcades / Arcaden;S8819406=Brussels Airport-Zaventem;S8815016=Tour & Taxis / Thurn & Taxis;S8814456=Boondael / Bondaal;S8811429=Watermael / Watermaal;S8811437=Boitsfort / Bosvoorde;S8811940=Anderlecht;S8812047=Jette;S8811411=Etterbeek;S8811197=Mérode;S8811171=Meiser;S8811106=Evere;S8811148=Buda / Boeda;S8812021=Bockstael;S8812013=Simonis;S8811205=Delta;S8811155=Haren"""
+fix = {('stib:'+k): v for k, v in (x.split('=', 1) for x in STIB.split(';'))}
+fix.update({('nmbs:gs:nmbssncb:'+k): v for k, v in (x.split('=', 1) for x in NMBS.split(';'))})
+
+missing = [i for i in fix if i not in d['nodes']]
+if missing: print('WARN unknown ids:', missing)
+
+nodes = {}
+for i, n in d['nodes'].items():
+    nm = fix.get(i, n['name'])
+    nodes[i] = {'n': nm, 'a': round(n['lat'], 5), 'o': round(n['lon'], 5),
+                'p': 'N' if n['op'] == 'NMBS-SNCB' else 'S', 'm': ''.join(sorted({'metro': 'M', 'tram': 'T', 'train': 'R'}[m] for m in n['modes']))}
+edges = []
+for e in d['edges']:
+    if e['kind'] == 'ride':
+        edges.append([e['u'], e['v'], e['t'], {'metro':'m','tram':'t','train':'r'}[e['mode']], e['line'], 'N' if e['op'] == 'NMBS-SNCB' else 'S', e.get('d', 0)])
+    else:
+        edges.append([e['u'], e['v'], e['t'], 'w', '', 'X' if e.get('cross_operator') else 'W', 0])
+out = {'meta': d['meta'], 'nodes': nodes, 'edges': edges}
+with open('data.js', 'w', encoding='utf-8') as f:
+    f.write('window.NET=' + json.dumps(out, ensure_ascii=False, separators=(',', ':')) + ';\n')
+print(len(nodes), len(edges))

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brufast</title>
+<meta name="description" content="Brufast — train and metro in Brussels as one self-healing network (NMBS-SNCB + STIB-MIVB).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="mark"><b>Bru</b>fast</span>
+    <span class="tag" id="tagline"></span>
+    <label class="langsel"><span class="sr" id="langLbl">Language</span>
+      <select id="lang" aria-labelledby="langLbl"></select></label>
+  </header>
+
+  <div class="principle" id="principle"></div>
+
+  <div class="grid">
+    <div class="mapcard">
+      <div id="map" role="img"></div>
+      <div class="maplegend" id="legend"></div>
+    </div>
+
+    <div>
+      <div class="panel">
+        <h2 id="hRoute"></h2>
+        <label for="from" id="lFrom"></label><select id="from"></select>
+        <button class="swap" id="swap" type="button"></button>
+        <label for="to" id="lTo"></label><select id="to"></select>
+      </div>
+      <div class="panel">
+        <h2 id="hDisr"></h2>
+        <div class="chips" id="metroChips"></div>
+        <div class="sub" id="lTrain"></div>
+        <div class="chips" id="trainChips"></div>
+        <div class="sub" id="clickHint"></div>
+        <div class="chips" id="segChips"></div>
+        <label class="check"><input type="checkbox" id="tramToggle" checked> <span id="lTram"></span></label>
+      </div>
+      <div class="panel">
+        <h2 id="hItin"></h2>
+        <div class="itin" id="itin" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="data.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
