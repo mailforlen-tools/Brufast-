@@ -72,10 +72,19 @@ function legs(chain) {
 /* ---------- map (Leaflet) ---------- */
 const map = L.map("map", {zoomControl:true, preferCanvas:false}).setView([50.846, 4.357], 12);
 const dark = matchMedia("(prefers-color-scheme: dark)");
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom:19,
-  attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
-// OSM has no dark style: dim/invert the tile pane in dark mode (CSS)
-(dark.addEventListener ? dark.addEventListener("change", refresh) : null);
+const KEY = (window.BRUFAST_CONFIG && window.BRUFAST_CONFIG.cartoKey) || "";
+if (!KEY) console.warn("Brufast: no CARTO key set in config.js — the basemap will not load.");
+const ATTR = '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/attributions">CARTO</a>';
+const tiles = {
+  light: L.tileLayer("https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png?key=" + encodeURIComponent(KEY), {maxZoom:19, attribution:ATTR}),
+  dark:  L.tileLayer("https://basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png?key=" + encodeURIComponent(KEY), {maxZoom:19, attribution:ATTR})
+};
+function setTiles() {
+  const want = dark.matches ? "dark" : "light";
+  Object.entries(tiles).forEach(([k, l]) => { if (k === want) l.addTo(map); else map.removeLayer(l); });
+}
+setTiles();
+(dark.addEventListener ? dark.addEventListener("change", () => { setTiles(); refresh(); }) : null);
 
 const ll = id => [N[id].a, N[id].o];
 const baseGroup = L.layerGroup().addTo(map), routeGroup = L.layerGroup().addTo(map);
