@@ -31,7 +31,7 @@ window.I18N = {
     stops: n => `${n} ${n === 1 ? "arrêt" : "arrêts"}`,
     metro: "métro", tram: "tram", train: "train", interchange: "correspondance train↔métro/tram", routeLbl: "itinéraire",
     showTram: "Afficher les trams", mapAria: "Carte du réseau fusionné", minutes: "min",
-    foot: (a, b) => `<b>Brufast</b> est une preuve de concept : l'auto-réparation découle de la structure du graphe et d'un algorithme de plus court chemin, déterministe, sans modèle. Données : <a href="https://data.belgianmobility.io/fr/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — GTFS de la STIB-MIVB (métro + tram) et de la SNCB (train), fusionnés en un réseau de ${a} arrêts et ${b} correspondances train↔métro/tram. Source : STIB-MIVB / SNCB — Open Data — CC BY 4.0. Carte : © contributeurs <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>.`
+    foot: (a, b) => `<b>Brufast</b> est une preuve de concept : l'auto-réparation découle de la structure du graphe et d'un algorithme de plus court chemin, déterministe, sans modèle. Données : <a href="https://data.belgianmobility.io/fr/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — GTFS de la STIB-MIVB (métro + tram) et de la SNCB (train), fusionnés en un réseau de ${a} arrêts et ${b} correspondances train↔métro/tram. Source : STIB-MIVB / SNCB — Open Data — CC BY 4.0. Carte : © contributeurs <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>.`
   },
   en: {
     name: "English",
@@ -82,6 +82,6 @@ window.I18N = {
     stops: n => `${n} ${n === 1 ? "parada" : "paradas"}`,
     metro: "metro", tram: "tranvía", train: "tren", interchange: "transbordo tren↔metro/tranvía", routeLbl: "ruta",
     showTram: "Mostrar tranvías", mapAria: "Mapa de la red unificada", minutes: "min",
-    foot: (a, b) => `<b>Brufast</b> es una prueba de concepto: la autorreparación procede de la estructura del grafo y de un algoritmo de camino más corto, determinista y sin modelo. Datos: <a href="https://data.belgianmobility.io/en/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — GTFS de STIB-MIVB (metro + tranvía) y NMBS-SNCB (tren), unificados en una red de ${a} paradas y ${b} transbordos tren↔metro/tranvía. Fuente: STIB-MIVB / NMBS-SNCB — Open Data — CC BY 4.0. Mapa: © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>.`
+    foot: (a, b) => `<b>Brufast</b> es una prueba de concepto: la autorreparación procede de la estructura del grafo y de un algoritmo de camino más corto, determinista y sin modelo. Datos: <a href="https://data.belgianmobility.io/en/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — GTFS de STIB-MIVB (metro + tranvía) y NMBS-SNCB (tren), unificados en una red de ${a} paradas y ${b} transbordos tren↔metro/tranvía. Fuente: STIB-MIVB / NMBS-SNCB — Open Data — CC BY 4.0. Mapa: © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>.`
   }
 };
