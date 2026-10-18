@@ -13,7 +13,7 @@ Languages: NL · FR · EN · DE · ES (selector top right; `?lang=fr` also works
 Settings → Pages → Deploy from branch → `main` / root.
 
 ## Data
-STIB-MIVB / NMBS-SNCB Open Data, CC BY 4.0 via data.belgianmobility.io. Map © OpenStreetMap contributors.
+STIB-MIVB / NMBS-SNCB Open Data, CC BY 4.0 via data.belgianmobility.io. .
 
 ## Notes
 - Map tiles: CARTO basemap (`rastertiles/voyager`, dark: `dark_all`). Put the key in `config.js`; it is public in a static site, so restrict it to the Pages domain in the CARTO dashboard. Never paste the key in chats or issues.
