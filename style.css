@@ -70,6 +70,7 @@ select{width:100%;padding:8px 9px;border:1px solid var(--line);border-radius:6px
 .stn-tip{font-family:"Barlow Semi Condensed",sans-serif;font-size:12px;padding:2px 6px}
 @media (prefers-color-scheme:dark){
   .leaflet-container{background:#0e1116}
+  .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.85) contrast(.9)}
   .leaflet-tooltip{background:#171b22;color:#e7eaef;border-color:#262c37}
   .leaflet-tooltip-top:before{border-top-color:#262c37}
 }

@@ -14,7 +14,7 @@ window.I18N = {
     stops: n => `${n} ${n === 1 ? "halte" : "haltes"}`,
     metro: "metro", tram: "tram", train: "trein", interchange: "overstap trein↔metro/tram", routeLbl: "route",
     showTram: "Trams tonen", mapAria: "Kaart van het samengevoegde net", minutes: "min",
-    foot: (a, b) => `<b>Brufast</b> is een proof of concept: het zelfherstel komt uit de graafstructuur en een kortste-padalgoritme, deterministisch, zonder model. Gegevens: <a href="https://data.belgianmobility.io/nl/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — STIB-MIVB (metro + tram) en NMBS-SNCB (trein) GTFS, samengevoegd tot één net van ${a} haltes en ${b} trein↔metro/tram-overstappen. Bron: STIB-MIVB / NMBS-SNCB — Open Data — CC BY 4.0. Kaart: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>-bijdragers © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>.`
+    foot: (a, b) => `<b>Brufast</b> is een proof of concept: het zelfherstel komt uit de graafstructuur en een kortste-padalgoritme, deterministisch, zonder model. Gegevens: <a href="https://data.belgianmobility.io/nl/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — STIB-MIVB (metro + tram) en NMBS-SNCB (trein) GTFS, samengevoegd tot één net van ${a} haltes en ${b} trein↔metro/tram-overstappen. Bron: STIB-MIVB / NMBS-SNCB — Open Data — CC BY 4.0. Kaart: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>-bijdragers.`
   },
   fr: {
     name: "Français",
@@ -31,7 +31,7 @@ window.I18N = {
     stops: n => `${n} ${n === 1 ? "arrêt" : "arrêts"}`,
     metro: "métro", tram: "tram", train: "train", interchange: "correspondance train↔métro/tram", routeLbl: "itinéraire",
     showTram: "Afficher les trams", mapAria: "Carte du réseau fusionné", minutes: "min",
-    foot: (a, b) => `<b>Brufast</b> est une preuve de concept : l'auto-réparation découle de la structure du graphe et d'un algorithme de plus court chemin, déterministe, sans modèle. Données : <a href="https://data.belgianmobility.io/fr/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — GTFS de la STIB-MIVB (métro + tram) et de la SNCB (train), fusionnés en un réseau de ${a} arrêts et ${b} correspondances train↔métro/tram. Source : STIB-MIVB / SNCB — Open Data — CC BY 4.0. Carte : © contributeurs <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>.`
+    foot: (a, b) => `<b>Brufast</b> est une preuve de concept : l'auto-réparation découle de la structure du graphe et d'un algorithme de plus court chemin, déterministe, sans modèle. Données : <a href="https://data.belgianmobility.io/fr/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — GTFS de la STIB-MIVB (métro + tram) et de la SNCB (train), fusionnés en un réseau de ${a} arrêts et ${b} correspondances train↔métro/tram. Source : STIB-MIVB / SNCB — Open Data — CC BY 4.0. Carte : © contributeurs <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>.`
   },
   en: {
     name: "English",
@@ -48,7 +48,7 @@ window.I18N = {
     stops: n => `${n} ${n === 1 ? "stop" : "stops"}`,
     metro: "metro", tram: "tram", train: "train", interchange: "train↔metro/tram interchange", routeLbl: "route",
     showTram: "Show trams", mapAria: "Map of the merged network", minutes: "min",
-    foot: (a, b) => `<b>Brufast</b> is a proof of concept: the self-healing comes from the graph structure and a shortest-path algorithm — deterministic, no model involved. Data: <a href="https://data.belgianmobility.io/en/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — STIB-MIVB (metro + tram) and NMBS-SNCB (train) GTFS, merged into one network of ${a} stops and ${b} train↔metro/tram interchanges. Source: STIB-MIVB / NMBS-SNCB — Open Data — CC BY 4.0. Map: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>.`
+    foot: (a, b) => `<b>Brufast</b> is a proof of concept: the self-healing comes from the graph structure and a shortest-path algorithm — deterministic, no model involved. Data: <a href="https://data.belgianmobility.io/en/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — STIB-MIVB (metro + tram) and NMBS-SNCB (train) GTFS, merged into one network of ${a} stops and ${b} train↔metro/tram interchanges. Source: STIB-MIVB / NMBS-SNCB — Open Data — CC BY 4.0. Map: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.`
   },
   de: {
     name: "Deutsch",
@@ -65,7 +65,7 @@ window.I18N = {
     stops: n => `${n} ${n === 1 ? "Halt" : "Halte"}`,
     metro: "Metro", tram: "Tram", train: "Zug", interchange: "Umstieg Zug↔Metro/Tram", routeLbl: "Route",
     showTram: "Trams anzeigen", mapAria: "Karte des zusammengeführten Netzes", minutes: "Min.",
-    foot: (a, b) => `<b>Brufast</b> ist ein Proof of Concept: Die Selbstheilung ergibt sich aus der Graphstruktur und einem Kürzeste-Wege-Algorithmus – deterministisch, ohne Modell. Daten: <a href="https://data.belgianmobility.io/en/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — GTFS von STIB-MIVB (Metro + Tram) und NMBS-SNCB (Zug), zusammengeführt zu einem Netz mit ${a} Haltestellen und ${b} Umstiegen Zug↔Metro/Tram. Quelle: STIB-MIVB / NMBS-SNCB — Open Data — CC BY 4.0. Karte: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>-Mitwirkende © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>.`
+    foot: (a, b) => `<b>Brufast</b> ist ein Proof of Concept: Die Selbstheilung ergibt sich aus der Graphstruktur und einem Kürzeste-Wege-Algorithmus – deterministisch, ohne Modell. Daten: <a href="https://data.belgianmobility.io/en/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — GTFS von STIB-MIVB (Metro + Tram) und NMBS-SNCB (Zug), zusammengeführt zu einem Netz mit ${a} Haltestellen und ${b} Umstiegen Zug↔Metro/Tram. Quelle: STIB-MIVB / NMBS-SNCB — Open Data — CC BY 4.0. Karte: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>-Mitwirkende.`
   },
   es: {
     name: "Español",
@@ -82,6 +82,6 @@ window.I18N = {
     stops: n => `${n} ${n === 1 ? "parada" : "paradas"}`,
     metro: "metro", tram: "tranvía", train: "tren", interchange: "transbordo tren↔metro/tranvía", routeLbl: "ruta",
     showTram: "Mostrar tranvías", mapAria: "Mapa de la red unificada", minutes: "min",
-    foot: (a, b) => `<b>Brufast</b> es una prueba de concepto: la autorreparación procede de la estructura del grafo y de un algoritmo de camino más corto, determinista y sin modelo. Datos: <a href="https://data.belgianmobility.io/en/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — GTFS de STIB-MIVB (metro + tranvía) y NMBS-SNCB (tren), unificados en una red de ${a} paradas y ${b} transbordos tren↔metro/tranvía. Fuente: STIB-MIVB / NMBS-SNCB — Open Data — CC BY 4.0. Mapa: © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>.`
+    foot: (a, b) => `<b>Brufast</b> es una prueba de concepto: la autorreparación procede de la estructura del grafo y de un algoritmo de camino más corto, determinista y sin modelo. Datos: <a href="https://data.belgianmobility.io/en/data.html" target="_blank" rel="noopener">data.belgianmobility.io</a> — GTFS de STIB-MIVB (metro + tranvía) y NMBS-SNCB (tren), unificados en una red de ${a} paradas y ${b} transbordos tren↔metro/tranvía. Fuente: STIB-MIVB / NMBS-SNCB — Open Data — CC BY 4.0. Mapa: © colaboradores de <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>.`
   }
 };
