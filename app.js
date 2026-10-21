@@ -235,12 +235,20 @@ function applyLang() {
 
 /* ---------- init ---------- */
 fromSel = $("from"); toSel = $("to");
-const langSel = $("lang");
-supported.forEach(k => langSel.appendChild(new Option(I18N[k].name, k)));
-lang = detectLang(); langSel.value = lang;
-langSel.onchange = () => { lang = langSel.value;
+const langBox = $("lang");
+function setLang(k) {
+  lang = k;
   try { localStorage.setItem("brufast.lang", lang); } catch (e) {}
-  applyLang(); refresh(false); };
+  langBox.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  applyLang(); refresh(false);
+}
+supported.forEach(k => {
+  const b = document.createElement("button"); b.type = "button"; b.dataset.lang = k;
+  b.textContent = k.toUpperCase(); b.title = I18N[k].name; b.lang = k;
+  b.onclick = () => setLang(k); langBox.appendChild(b);
+});
+lang = detectLang();
+langBox.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
 fromSel.onchange = toSel.onchange = () => render();
 $("swap").onclick = () => { const a = fromSel.value; fromSel.value = toSel.value; toSel.value = a; render(); };
 tramToggle.onchange = () => refresh(false);
