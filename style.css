@@ -16,7 +16,11 @@ header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:4
 .mark{font-family:"Barlow Semi Condensed",sans-serif;font-weight:700;font-size:29px;letter-spacing:-.01em;color:var(--accent)}
 .mark b{color:var(--accent-bright)}
 .tag{color:var(--muted);font-size:14px;max-width:52ch;flex:1 1 280px}
-.langsel{margin:0 0 0 auto;display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.tools{margin:0 0 0 auto;display:flex;align-items:center;gap:12px}
+.ghlink{color:var(--muted);display:inline-flex;padding:4px;border-radius:6px}
+.ghlink:hover{color:var(--ink)}
+.ghlink:focus-visible{outline:2px solid var(--accent-bright)}
+.langsel{margin:0;display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
 .langsel button{appearance:none;border:0;border-left:1px solid var(--line);background:transparent;color:var(--muted);
   font-family:"Barlow Semi Condensed",sans-serif;font-weight:600;font-size:13px;letter-spacing:.04em;padding:6px 13px;cursor:pointer}
 .langsel button:first-child{border-left:0}
